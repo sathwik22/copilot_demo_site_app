@@ -9,12 +9,62 @@ import {
     TagIcon,
     ChevronDownIcon,
     ChevronUpIcon,
+    WrenchScrewdriverIcon,
+    CheckCircleIcon,
 } from '@heroicons/react/24/outline';
 import VideoPlayer from './components/VideoPlayer';
 
 function App() {
     const [activeTab, setActiveTab] = useState('modes');
     const [selectedVideo, setSelectedVideo] = useState(null);
+
+    const installationSteps = [
+        {
+            title: 'Step 1: OneIdM Portal Request',
+            description: 'Request GitHub Copilot access through OneIdM Portal',
+            items: [
+                'Go to OneIdM Portal',
+                'Click on "New request"',
+                'Search for "IDM2BCD_BDC_Githubcom_CoPilot"',
+                'Select GitHubcom_Copilot and add to cart',
+                'Self-assign the licensing',
+            ],
+            image: '/images/copilot-request-oneidm.png',
+        },
+        {
+            title: 'Step 2: GitHub Account Setup',
+            description:
+                'Create and configure your GitHub account with Bosch credentials',
+            items: [
+                'Create GitHub account with non NT-ID username',
+                'Use your "<nt-id>@bosch.com" as email',
+                'Save the recovery codes provided',
+                'Enable 2FA using SMS option in settings',
+                'Login to https://github.com',
+            ],
+        },
+        {
+            title: 'Step 3: Access Confirmation',
+            description: 'Complete the GitHub Copilot activation process',
+            items: [
+                'Wait for email confirmation from GitHub',
+                'Click the "Join" button in the email',
+                'Receive final confirmation email',
+                'Verify Copilot access in your GitHub account',
+            ],
+            image: '/images/copilot-access-granted.png',
+        },
+        {
+            title: 'Step 4: IDE Integration',
+            description: 'Set up GitHub Copilot in your preferred IDE',
+            items: [
+                'Choose your preferred IDE (VS Code, IntelliJ, etc.)',
+                'Install the GitHub Copilot extension',
+                'Sign in to GitHub in your IDE',
+                'Verify Copilot integration',
+            ],
+        },
+    ];
 
     const tutorials = [
         {
@@ -246,6 +296,16 @@ function App() {
                     >
                         Video Tutorials
                     </button>
+                    <button
+                        onClick={() => setActiveTab('installation')}
+                        className={`px-4 py-2 rounded-lg font-medium ${
+                            activeTab === 'installation'
+                                ? 'bg-indigo-100 text-indigo-700'
+                                : 'text-gray-500 hover:text-gray-700'
+                        }`}
+                    >
+                        Installation Guide
+                    </button>
                 </nav>
 
                 {activeTab === 'modes' && (
@@ -471,6 +531,112 @@ function App() {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                )}
+
+                {activeTab === 'installation' && (
+                    <div className="space-y-8">
+                        {installationSteps.map((step, index) => (
+                            <div
+                                key={step.title}
+                                className="bg-white rounded-lg shadow-lg overflow-hidden"
+                            >
+                                <div className="p-6">
+                                    <div className="flex items-start space-x-4">
+                                        <div className="flex-shrink-0">
+                                            <div className="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center">
+                                                <span className="text-indigo-600 font-semibold">
+                                                    {index + 1}
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div className="flex-1">
+                                            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                                                {step.title}
+                                            </h3>
+                                            <p className="text-gray-600 mb-4">
+                                                {step.description}
+                                            </p>
+                                            <ul className="space-y-3">
+                                                {step.items.map((item, idx) => (
+                                                    <li
+                                                        key={idx}
+                                                        className="flex items-start space-x-3"
+                                                    >
+                                                        <CheckCircleIcon className="h-6 w-6 text-green-500 flex-shrink-0" />
+                                                        <span className="text-gray-600">
+                                                            {item ===
+                                                            'Go to OneIdM Portal' ? (
+                                                                <a
+                                                                    href="https://oneidm.bosch.com/oneidm/html/rbwebshop/#/start/new-request"
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    className="text-indigo-600 hover:text-indigo-800"
+                                                                >
+                                                                    {item}
+                                                                </a>
+                                                            ) : (
+                                                                item
+                                                            )}
+                                                        </span>
+                                                    </li>
+                                                ))}
+                                                {index === 0 && (
+                                                    <div className="mt-6 rounded-lg overflow-hidden border border-gray-200 max-w-2xl mx-auto">
+                                                        <img
+                                                            src="/images/copilot-request-oneidm.png"
+                                                            alt="Copilot Request in OneIdM"
+                                                            className="w-full h-auto max-h-[400px] object-contain"
+                                                        />
+                                                    </div>
+                                                )}
+                                                {index === 2 && (
+                                                    <div className="mt-6 rounded-lg overflow-hidden border border-gray-200 max-w-2xl mx-auto">
+                                                        <img
+                                                            src="/images/copilot-access-granted.png"
+                                                            alt="GitHub Account Setup"
+                                                            className="w-full h-auto max-h-[400px] object-contain"
+                                                        />
+                                                    </div>
+                                                )}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+
+                        <div className="bg-yellow-50 rounded-lg p-6 mt-4">
+                            <div className="flex items-center space-x-3">
+                                <LightBulbIcon className="h-6 w-6 text-yellow-500" />
+                                <h4 className="text-lg font-medium text-yellow-900">
+                                    Quick Tips
+                                </h4>
+                            </div>
+                            <ul className="mt-4 space-y-2">
+                                <li className="flex items-center space-x-2 text-yellow-700">
+                                    <span>•</span>
+                                    <span>
+                                        Make sure to save your GitHub recovery
+                                        codes
+                                    </span>
+                                </li>
+                                <li className="flex items-center space-x-2 text-yellow-700">
+                                    <span>•</span>
+                                    <span>
+                                        Use your Bosch email format:
+                                        "&lt;nt-id&gt;@bosch.com"
+                                    </span>
+                                </li>
+                                <li className="flex items-center space-x-2 text-yellow-700">
+                                    <span>•</span>
+                                    <span>
+                                        Remember to enable 2FA using SMS for
+                                        enhanced security
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 )}
 
