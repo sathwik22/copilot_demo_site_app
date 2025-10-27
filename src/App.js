@@ -584,7 +584,7 @@ function App() {
                                                 {index === 0 && (
                                                     <div className="mt-6 rounded-lg overflow-hidden border border-gray-200 max-w-2xl mx-auto">
                                                         <img
-                                                            src="/images/copilot-request-oneidm.png"
+                                                            src="/images/copilot-request-oneIDM.png"
                                                             alt="Copilot Request in OneIdM"
                                                             className="w-full h-auto max-h-[400px] object-contain"
                                                         />
