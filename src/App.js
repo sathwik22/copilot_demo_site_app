@@ -10,7 +10,6 @@ import {
     ChevronDownIcon,
     ChevronUpIcon,
 } from '@heroicons/react/24/outline';
-import Mermaid from 'mermaid-react';
 import VideoPlayer from './components/VideoPlayer';
 
 function App() {
@@ -469,45 +468,6 @@ function App() {
                                             )}
                                         </ul>
                                     </div>
-
-                                    {tutorial.diagrams && (
-                                        <div className="mt-6 border-t pt-6">
-                                            <h4 className="text-sm font-medium text-gray-900 mb-4">
-                                                Architecture & Workflow
-                                                Diagrams:
-                                            </h4>
-                                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                                                <div className="bg-gray-50 p-4 rounded-lg">
-                                                    <h5 className="text-sm font-medium text-gray-700 mb-2">
-                                                        Architecture Diagram
-                                                    </h5>
-                                                    <div className="bg-white p-4 rounded border">
-                                                        <Mermaid
-                                                            chart={
-                                                                tutorial
-                                                                    .diagrams
-                                                                    .architecture
-                                                            }
-                                                        />
-                                                    </div>
-                                                </div>
-                                                <div className="bg-gray-50 p-4 rounded-lg">
-                                                    <h5 className="text-sm font-medium text-gray-700 mb-2">
-                                                        Workflow Diagram
-                                                    </h5>
-                                                    <div className="bg-white p-4 rounded border">
-                                                        <Mermaid
-                                                            chart={
-                                                                tutorial
-                                                                    .diagrams
-                                                                    .workflow
-                                                            }
-                                                        />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    )}
                                 </div>
                             </div>
                         ))}
