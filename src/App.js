@@ -266,6 +266,16 @@ function App() {
             <main className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
                 <nav className="flex flex-wrap gap-4 mb-8">
                     <button
+                        onClick={() => setActiveTab('installation')}
+                        className={`px-4 py-2 rounded-lg font-medium ${
+                            activeTab === 'installation'
+                                ? 'bg-indigo-100 text-indigo-700'
+                                : 'text-gray-500 hover:text-gray-700'
+                        }`}
+                    >
+                        Installation Guide
+                    </button>
+                    <button
                         onClick={() => setActiveTab('modes')}
                         className={`px-4 py-2 rounded-lg font-medium ${
                             activeTab === 'modes'
@@ -295,16 +305,6 @@ function App() {
                         }`}
                     >
                         Video Tutorials
-                    </button>
-                    <button
-                        onClick={() => setActiveTab('installation')}
-                        className={`px-4 py-2 rounded-lg font-medium ${
-                            activeTab === 'installation'
-                                ? 'bg-indigo-100 text-indigo-700'
-                                : 'text-gray-500 hover:text-gray-700'
-                        }`}
-                    >
-                        Installation Guide
                     </button>
                 </nav>
 
