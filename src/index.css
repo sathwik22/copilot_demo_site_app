@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply antialiased text-gray-900 bg-gray-50;
+    }
+}
+
+@layer components {
+    .tutorial-video-container {
+        @apply relative pb-[56.25%] h-0 overflow-hidden rounded-lg;
+    }
+
+    .tutorial-video {
+        @apply absolute top-0 left-0 w-full h-full object-cover;
+    }
+}
+
+/* Mermaid diagram customization */
+.mermaid {
+    @apply !bg-transparent;
+}
+
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node polygon,
+.mermaid .node path {
+    @apply !fill-white !stroke-indigo-500;
+}
+
+.mermaid .edgePath .path {
+    @apply !stroke-indigo-400;
+}
+
+.mermaid .arrowheadPath {
+    @apply !fill-indigo-400;
+}
+
+.mermaid .nodeLabel {
+    @apply !text-gray-700 !font-medium;
+}
+
+.mermaid .edgeLabel {
+    @apply !bg-white !text-gray-600 !rounded !px-2 !py-1;
+}
