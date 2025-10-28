@@ -40,7 +40,7 @@ function App() {
         },
         {
             title: 'Bosch AI Hackathon 2025',
-            date: 'December (dates yet to be confirmed), 2025',
+            date: 'November (end of the month), 2025',
             type: 'Virtual Event',
             description:
                 'Transform innovative AI ideas into reality! Join our intensive hackathon to build cutting-edge solutions in Machine Learning, Deep Learning, Computer Vision, NLP, or any AI domain. Create impactful applications that can revolutionize how we work at Bosch.',
