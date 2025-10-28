@@ -11,12 +11,51 @@ import {
     ChevronUpIcon,
     WrenchScrewdriverIcon,
     CheckCircleIcon,
+    CalendarIcon,
+    TrophyIcon,
+    UserGroupIcon,
+    SparklesIcon,
 } from '@heroicons/react/24/outline';
 import VideoPlayer from './components/VideoPlayer';
 
 function App() {
     const [activeTab, setActiveTab] = useState('modes');
     const [selectedVideo, setSelectedVideo] = useState(null);
+
+    const upcomingEvents = [
+        {
+            title: 'AI Innovation Ideation Week',
+            date: 'November mid week, 2025',
+            type: 'Virtual Event',
+            description:
+                'Join us for an exciting ideation session focusing on AI innovation across various domains. Share your groundbreaking ideas in areas like Machine Learning, Computer Vision, NLP, and AI-assisted Development. Shape the future of AI applications at Bosch!',
+            highlights: [
+                'Explore diverse AI domains and use-cases',
+                'Collaborate with AI enthusiasts across Bosch',
+                'Get feedback from AI experts and leaders',
+                'Best ideas advance to the hackathon phase',
+            ],
+            icon: SparklesIcon,
+            color: 'blue',
+        },
+        {
+            title: 'Bosch AI Hackathon 2025',
+            date: 'December (dates yet to be confirmed), 2025',
+            type: 'Virtual Event',
+            description:
+                'Transform innovative AI ideas into reality! Join our intensive hackathon to build cutting-edge solutions in Machine Learning, Deep Learning, Computer Vision, NLP, or any AI domain. Create impactful applications that can revolutionize how we work at Bosch.',
+            highlights: [
+                'Build AI-powered prototypes',
+                'Access to cloud computing resources',
+                'Mentorship from AI experts',
+                'Networking with tech leaders',
+                'Attractive rewards for winners',
+            ],
+
+            icon: TrophyIcon,
+            color: 'purple',
+        },
+    ];
 
     const installationSteps = [
         {
@@ -305,6 +344,16 @@ function App() {
                         }`}
                     >
                         Video Tutorials
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('events')}
+                        className={`px-4 py-2 rounded-lg font-medium ${
+                            activeTab === 'events'
+                                ? 'bg-indigo-100 text-indigo-700'
+                                : 'text-gray-500 hover:text-gray-700'
+                        }`}
+                    >
+                        Upcoming Events
                     </button>
                 </nav>
 
@@ -637,6 +686,108 @@ function App() {
                                 </li>
                             </ul>
                         </div>
+                    </div>
+                )}
+
+                {activeTab === 'events' && (
+                    <div className="space-y-8">
+                        {upcomingEvents.map((event) => (
+                            <div
+                                key={event.title}
+                                className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all hover:scale-[1.02]"
+                            >
+                                <div
+                                    className={`bg-gradient-to-r ${
+                                        event.color === 'blue'
+                                            ? 'from-blue-500 to-indigo-600'
+                                            : 'from-purple-500 to-pink-600'
+                                    } px-6 py-4`}
+                                >
+                                    <div className="flex items-center justify-between">
+                                        <h3 className="text-xl font-bold text-white">
+                                            {event.title}
+                                        </h3>
+                                        <event.icon className="h-8 w-8 text-white opacity-90" />
+                                    </div>
+                                    <div className="mt-2 flex items-center space-x-4">
+                                        <div className="flex items-center text-white opacity-90">
+                                            <CalendarIcon className="h-5 w-5 mr-2" />
+                                            {event.date}
+                                        </div>
+                                        <div className="flex items-center text-white opacity-90">
+                                            <UserGroupIcon className="h-5 w-5 mr-2" />
+                                            {event.type}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="p-6">
+                                    <p className="text-gray-600 mb-4">
+                                        {event.description}
+                                    </p>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <h4 className="font-semibold text-gray-900 mb-3">
+                                                Event Highlights:
+                                            </h4>
+                                            <ul className="space-y-2">
+                                                {event.highlights.map(
+                                                    (highlight, idx) => (
+                                                        <li
+                                                            key={idx}
+                                                            className="flex items-center text-gray-600"
+                                                        >
+                                                            <CheckCircleIcon className="h-5 w-5 mr-2 text-green-500" />
+                                                            {highlight}
+                                                        </li>
+                                                    )
+                                                )}
+                                            </ul>
+                                        </div>
+                                        {event.rewards && (
+                                            <div>
+                                                <h4 className="font-semibold text-gray-900 mb-3">
+                                                    Rewards:
+                                                </h4>
+                                                <ul className="space-y-3">
+                                                    {event.rewards.map(
+                                                        (reward, idx) => (
+                                                            <li
+                                                                key={idx}
+                                                                className="flex items-start"
+                                                            >
+                                                                <TrophyIcon
+                                                                    className={`h-5 w-5 mr-2 ${
+                                                                        idx ===
+                                                                        0
+                                                                            ? 'text-yellow-500'
+                                                                            : idx ===
+                                                                              1
+                                                                            ? 'text-gray-400'
+                                                                            : 'text-orange-500'
+                                                                    }`}
+                                                                />
+                                                                <div>
+                                                                    <span className="font-medium text-gray-900">
+                                                                        {
+                                                                            reward.place
+                                                                        }
+                                                                    </span>
+                                                                    <p className="text-gray-600">
+                                                                        {
+                                                                            reward.prize
+                                                                        }
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+                                                        )
+                                                    )}
+                                                </ul>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 )}
 
