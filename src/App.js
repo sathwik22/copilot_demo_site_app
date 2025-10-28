@@ -17,7 +17,7 @@ import {
     SparklesIcon,
 } from '@heroicons/react/24/outline';
 import VideoPlayer from './components/VideoPlayer';
-
+import FeedbackBoard from './components/FeedbackBoard';
 function App() {
     const [activeTab, setActiveTab] = useState('modes');
     const [selectedVideo, setSelectedVideo] = useState(null);
@@ -354,6 +354,16 @@ function App() {
                         }`}
                     >
                         Upcoming Events
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('feedback')}
+                        className={`px-4 py-2 rounded-lg font-medium ${
+                            activeTab === 'feedback'
+                                ? 'bg-indigo-100 text-indigo-700'
+                                : 'text-gray-500 hover:text-gray-700'
+                        }`}
+                    >
+                        Feedback
                     </button>
                 </nav>
 
@@ -790,6 +800,7 @@ function App() {
                         ))}
                     </div>
                 )}
+                {activeTab === 'feedback' && <FeedbackBoard />}
 
                 {/* Video Modal */}
                 {selectedVideo && (
