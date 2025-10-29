@@ -1,3 +1,43 @@
+# Bosch Copilot Demo Site
+
+This project is a live demonstration site created to showcase the advantages and practical applications of GitHub Copilot for developers at Bosch. As a member of the Bosch AI Task Force, I conducted sessions highlighting how Copilot can accelerate development, improve code quality, and enhance productivity through AI-powered code suggestions and automation.
+
+The site was built using React and Tailwind CSS, and it features interactive tutorials, event information, and real-world examples of Copilot in action. The goal is to provide Bosch teams with hands-on experience and resources to adopt Copilot effectively in their daily workflows.
+
+**Why this project?**
+
+-   To educate and inspire Bosch developers about the benefits of AI-assisted development.
+-   To provide a central resource for Copilot onboarding, tutorials, and best practices.
+-   To demonstrate the real-world impact of Copilot through a modern, interactive web application.
+
+## Features in this Project
+
+-   **Interactive Tutorials:** Step-by-step guides and video walkthroughs on using Copilot and building modern web apps.
+-   **Event Information:** Details about upcoming AI events and hackathons at Bosch.
+-   **Installation Steps:** Clear instructions for onboarding and integrating Copilot with your IDE.
+-   **Model & Mode Overviews:** Information about available AI models and Copilot usage modes.
+-   **Live Demo:** Explore Copilot’s capabilities in a real React + Tailwind CSS codebase.
+
+## How to Run the Project
+
+1. Install dependencies:
+    ```bash
+    npm install
+    ```
+2. Start the development server:
+    ```bash
+    npm start
+    ```
+    The app will be available at [http://localhost:3000](http://localhost:3000).
+
+## How to Build for Production
+
+1. Build the app:
+    ```bash
+    npm run build
+    ```
+    The optimized production build will be in the `build` folder.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -28,43 +68,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
