@@ -18,6 +18,11 @@ The site was built using React and Tailwind CSS, and it features interactive tut
 -   **Model & Mode Overviews:** Information about available AI models and Copilot usage modes.
 -   **Live Demo:** Explore Copilot’s capabilities in a real React + Tailwind CSS codebase.
 
+
+## 🌐 Live Demo
+
+[copilot demo Live](https://copilot-demo-site-app.vercel.app/) 
+
 ## How to Run the Project
 
 1. Install dependencies:
